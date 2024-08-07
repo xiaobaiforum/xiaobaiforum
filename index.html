@@ -5,40 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>小白论坛</title>
     <style>
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
+        body{
+          background-color: #F9F9F9;
+          height: 100vh;
+          margin: 0;
         }
         .short-drama-card {
             background: #fff;
             padding: 30px;
-            margin-top: 20px;
+            margin: 20px;
             border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             text-align: center;
         }
         .short-drama-image {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
+            width: 100px;
+            height: 100px;
             margin-top: 20px;
-            border-radius: 5px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         .short-drama-info {
             margin-top: 15px;
         }
         .card-button {
-            width: -1;
             height: 45px;
             background-color: #07C160;
             color: white;
@@ -46,7 +35,6 @@
             line-height: 50px;
             text-decoration: none;
             display: block;
-            margin: 20px auto 0;
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
@@ -61,19 +49,36 @@
             position: relative;
             margin-top: 30px;
         }
+        .list{
+          background-color: #FFFFFF;
+          border-radius: 15px;
+          padding: 15px;
+          margin: 15px;
+        }
+        .image{
+          width: 100%;
+          height: 500px;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="short-drama-card">
-            <img src="https://s21.ax1x.com/2024/08/07/pkxDVhT.png" class="short-drama-image">
-            <div class="short-drama-info">
-                <h2>小白论坛</h2>
-<h4>我的世界社区类应用</h4>
-           <p>小白论坛是一款MC玩家交流社区，在这里你可以上传自己的模组，也可以下载别人发布的模组，发布自己的生活日常，但是请不要发布违规违法的内容，一旦发现我们将会对您的账号进行封号，用户要是发现有违规内容，可以举报该内容给官方，经过核实，如果的确出现违规内容，将奖励20绿宝石，共创文明社区。</p>
-            </div>
-            <a href="https://xiaobaiforum.github.io/xiaobaiforum/小白论坛.apk" class="card-button">下载小白论坛</a>
-        </div>
+  <div class="short-drama-card">
+    <img src="https://s21.ax1x.com/2024/08/07/pkxDVhT.png" class="short-drama-image">
+      <div class="short-drama-info">
+         <h2>小白论坛</h2>
+         <h4>我的世界社区类应用</h4>
+         <p>小白论坛是一款MC玩家交流社区，在这里你可以上传自己的模组，也可以下载别人发布的模组，发布自己的生活日常，但是请不要发布违规违法的内容，一旦发现我们将会对您的账号进行封号，用户要是发现有违规内容，可以举报该内容给官方，经过核实，如果的确出现违规内容，将奖励20绿宝石，共创文明社区。</p>
+      </div>
+      <a href="https://xiaobaiforum.github.io/xiaobaiforum/小白论坛.apk" class="card-button">下载小白论坛</a>
+  </div>
+  <div>
+    <div class="list">
+      <h3>应用截图</h3>
+      <img class="image" src="home.jpg">
+      <img class="image" src="hd.jpg">
+      <img class="image" src="zy.jpg">
+      <img class="image" src="my.jpg">
     </div>
+  </div>
 </body>
 </html>
