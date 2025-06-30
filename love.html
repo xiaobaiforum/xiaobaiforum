@@ -1,0 +1,348 @@
+<html lang="zh-CN">
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>为爱发电 - 支持我们的创作</title> 
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <style>/*! tailwindcss v4.1.11 | MIT License | https://tailwindcss.com */
+@layer theme, base, components, utilities;
+@layer theme {
+  :root, :host {
+    --font-sans: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+  }
+}
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji');
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentcolor;
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type='button'], [type='reset'], [type='submit']), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden='until-found'])) {
+    display: none !important;
+  }
+}
+@layer utilities;
+</style> 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"> 
+  <style type="text/tailwindcss">
+    @theme {
+      --color-primary: #4F46E5;
+      --color-secondary: #10B981;
+      --color-accent: #F59E0B;
+      --font-inter: 'Inter', sans-serif;
+    }
+    
+    @utility smooth-transition {
+      transition: all 0.3s ease-in-out;
+    }
+    
+    @utility card-shadow {
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+    
+    @utility hover-lift {
+      transform: translateY(-5px);
+    }
+  </style>
+ </head> 
+ <body id="v1" class="font-inter bg-gray-50 min-h-screen"> 
+  <!-- 头部导航 --> 
+  <header id="v2" class="bg-white shadow-sm sticky top-0 z-50"> 
+   <div id="v3" class="container mx-auto px-4 py-4 flex justify-between items-center"> 
+    <h1 id="v4" class="text-2xl font-bold text-primary">为爱发电</h1> 
+    <nav id="v5"> 
+     <ul id="v6" class="flex space-x-6"> 
+      <li id="v7"><a id="v8" href="#about" class="text-gray-700 hover:text-primary smooth-transition">关于我们</a></li> 
+      <li id="v9"><a id="v10" href="#donate" class="text-gray-700 hover:text-primary smooth-transition">立即捐赠</a></li> 
+      <li id="v11"><a id="v12" href="#stories" class="text-gray-700 hover:text-primary smooth-transition">爱心故事</a></li> 
+     </ul> 
+    </nav> 
+   </div> 
+  </header> 
+  <!-- 英雄区域 --> 
+  <section id="v13" class="bg-gradient-to-r from-primary/10 to-secondary/10 py-16"> 
+   <div id="v14" class="container mx-auto px-4 text-center"> 
+    <h2 id="v15" class="text-4xl font-bold text-gray-800 mb-4">感谢您的支持与陪伴</h2> 
+    <p id="v16" class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">您的每一份爱心都将成为我们持续创作的动力，让更多美好内容得以延续</p> 
+    <a id="v17" href="#donate" class="bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 rounded-full smooth-transition card-shadow hover:card-shadow-lg hover-lift"> 立即为爱发电 <i id="v18" class="fas fa-heart ml-2"></i> </a> 
+   </div> 
+  </section> 
+  <!-- 关于我们 --> 
+  <section id="about" class="py-16 bg-white"> 
+   <div id="v19" class="container mx-auto px-4"> 
+    <h3 id="v20" class="text-3xl font-bold text-center text-gray-800 mb-12">为什么需要您的支持？</h3> 
+    <div id="v21" class="grid md:grid-cols-3 gap-8"> 
+     <div id="v22" class="bg-gray-50 p-6 rounded-xl card-shadow smooth-transition hover:card-shadow-lg"> 
+      <div id="v23" class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto"> 
+       <i id="v24" class="fas fa-lightbulb text-2xl text-primary"></i> 
+      </div> 
+      <h4 id="v25" class="text-xl font-semibold text-center mb-3">持续创作</h4> 
+      <p id="v26" class="text-gray-600 text-center">您的支持让我们能够专注于内容创作，无需为生计分心</p> 
+     </div> 
+     <div id="v27" class="bg-gray-50 p-6 rounded-xl card-shadow smooth-transition hover:card-shadow-lg"> 
+      <div id="v28" class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-4 mx-auto"> 
+       <i id="v29" class="fas fa-tools text-2xl text-secondary"></i> 
+      </div> 
+      <h4 id="v30" class="text-xl font-semibold text-center mb-3">提升质量</h4> 
+      <p id="v31" class="text-gray-600 text-center">资金将用于升级设备和技术，带来更高品质的内容体验</p> 
+     </div> 
+     <div id="v32" class="bg-gray-50 p-6 rounded-xl card-shadow smooth-transition hover:card-shadow-lg"> 
+      <div id="v33" class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-4 mx-auto"> 
+       <i id="v34" class="fas fa-users text-2xl text-accent"></i> 
+      </div> 
+      <h4 id="v35" class="text-xl font-semibold text-center mb-3">社区建设</h4> 
+      <p id="v36" class="text-gray-600 text-center">支持我们建设更完善的交流社区，连接更多志同道合的朋友</p> 
+     </div> 
+    </div> 
+   </div> 
+  </section> 
+  <!-- 捐赠方式 --> 
+  <section id="donate" class="py-16 bg-gray-50"> 
+   <div id="v37" class="container mx-auto px-4"> 
+    <h3 id="v38" class="text-3xl font-bold text-center text-gray-800 mb-12">选择您的为爱发电方式</h3> 
+    <div id="v39" class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"> 
+     <!-- 微信捐赠 --> 
+     <div id="v40" class="bg-white p-6 rounded-xl card-shadow smooth-transition hover:card-shadow-lg"> 
+      <div id="v41" class="flex items-center mb-4"> 
+       <div id="v42" class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-3"> 
+        <i id="v43" class="fab fa-weixin text-white text-xl"></i> 
+       </div> 
+       <h4 id="v44" class="text-xl font-semibold text-gray-800">微信支付</h4> 
+      </div> 
+      <p id="v45" class="text-gray-600 mb-6">扫描下方二维码，使用微信支付支持我们</p> 
+      <div id="v46" class="bg-gray-100 p-4 rounded-lg text-center mb-4"> 
+       <img id="v47" src="skm.png" alt="微信收款码" class="w-50 h-80 mx-auto"> 
+      </div> 
+      <div id="v48" class="flex justify-center"> 
+       <button id="v49" class="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-6 rounded-full smooth-transition"> 保存二维码 <i id="v50" class="fas fa-download ml-1"></i> </button> 
+      </div> 
+     </div> 
+     <!-- 支付宝捐赠 --> 
+     <div id="v51" class="bg-white p-6 rounded-xl card-shadow smooth-transition hover:card-shadow-lg"> 
+      <div id="v52" class="flex items-center mb-4"> 
+       <div id="v53" class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mr-3"> 
+        <i id="v54" class="fab fa-alipay text-white text-xl"></i> 
+       </div> 
+       <h4 id="v55" class="text-xl font-semibold text-gray-800">支付宝</h4> 
+      </div> 
+      <p id="v56" class="text-gray-600 mb-6">扫描下方二维码，使用支付宝支持我们</p> 
+      <div id="v57" class="bg-gray-100 p-4 rounded-lg text-center mb-4"> 
+       <img id="v58" src="zfb.png" alt="支付宝收款码" class="w-65 h-95 mx-auto"> 
+      </div> 
+      <div id="v59" class="flex justify-center"> 
+       <button id="v60" class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-6 rounded-full smooth-transition"> 保存二维码 <i id="v61" class="fas fa-download ml-1"></i> </button> 
+      </div> 
+     </div> 
+    </div> 
+    <!-- 捐赠说明 --> 
+    <div id="v62" class="mt-12 bg-white p-6 rounded-xl card-shadow max-w-3xl mx-auto"> 
+     <h4 id="v63" class="text-xl font-semibold text-gray-800 mb-4 flex items-center"> <i id="v64" class="fas fa-info-circle text-primary mr-2"></i> 捐赠说明 </h4> 
+     <ul id="v65" class="space-y-2 text-gray-600"> 
+      <li id="v66"><i id="v67" class="fas fa-check text-secondary mr-2"></i> 捐赠金额不限，每一份心意都弥足珍贵</li> 
+      <li id="v68"><i id="v69" class="fas fa-check text-secondary mr-2"></i> 所有捐赠资金将全部用于内容创作和平台维护</li> 
+      <li id="v70"><i id="v71" class="fas fa-check text-secondary mr-2"></i> 大额捐赠者可获得专属感谢礼包和内容优先体验权</li> 
+      <li id="v72"><i id="v73" class="fas fa-check text-secondary mr-2"></i> 如需捐赠凭证，请在支付时备注您的联系方式</li> 
+     </ul> 
+    </div> 
+   </div> 
+  </section>
+  <!-- 太带派了，太带派了 --> 
+  <section id="stories" class="py-16 bg-white"> 
+   <div id="v74" class="container mx-auto px-4"> 
+    <div id="v76" class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"> 
+     <div id="v77" class="bg-gray-50 p-6 rounded-xl card-shadow smooth-transition hover:card-shadow-lg"> 
+      <div id="v78" class="flex items-start"> 
+      </div> 
+     </div> 
+     <div id="v84" class="bg-gray-50 p-6 rounded-xl card-shadow smooth-transition hover:card-shadow-lg"> 
+      <div id="v85" class="flex items-start"> 
+      </div> 
+     </div> 
+    </div> 
+    <div id="v91" class="text-center mt-8"> 
+    </div> 
+   </div> 
+  </section> 
+  <!-- 页脚 --> 
+  <footer id="v94" class="bg-gray-800 text-white py-12"> 
+   <div id="v95" class="container mx-auto px-4"> 
+    <div id="v96" class="grid md:grid-cols-3 gap-8"> 
+     <div id="v97"> 
+      <h4 id="v98" class="text-xl font-bold mb-4">为爱发电</h4> 
+      <p id="v99" class="text-gray-400">因为热爱，所以坚持；因为有你，所以值得。</p> 
+     </div> 
+     <div id="v100"> 
+      <h4 id="v101" class="text-lg font-semibold mb-4">快速链接</h4> 
+      <ul id="v102" class="space-y-2"> 
+       <li id="v103"><a id="v104" href="#about" class="text-gray-400 hover:text-white smooth-transition">关于我们</a></li> 
+       <li id="v105"><a id="v106" href="#donate" class="text-gray-400 hover:text-white smooth-transition">立即捐赠</a></li> 
+       <li id="v107"><a id="v108" href="#stories" class="text-gray-400 hover:text-white smooth-transition">爱心故事</a></li> 
+      </ul> 
+     </div> 
+     <div id="v109"> 
+      <h4 id="v110" class="text-lg font-semibold mb-4">联系我们</h4> 
+      <ul id="v111" class="space-y-2 text-gray-400"> 
+       <li id="v112" class="flex items-center"><i id="v113" class="fas fa-envelope mr-2"></i> 252037050@qq.com</li> 
+       <li id="v114" class="flex items-center"><i id="v115" class="fas fa-weixin mr-2"></i> 哔哩哔哩:我的世界阿轩君</li> 
+       <li id="v116" class="flex items-center"><i id="v117" class="fas fa-weibo mr-2"></i> @小白论坛</li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div id="v118" class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-500"> 
+     <p id="v119">© 2025 为爱发电平台. 保留所有权利.</p> 
+    </div> 
+   </div> 
+  </footer> 
+  <script>
+    // 平滑滚动效果
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>  
+ </body>
+</html>
