@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小白论坛_帖子分享</title>
+  <style>
+    body {
+      font-family: "微软雅黑", sans-serif;
+      margin: 20px;
+      background: #fff;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+     }
+
+    h2 {
+      margin-bottom: 5px;
+      color: #000;
+    }
+p {
+      margin-bottom: 5px;
+      color: #000;
+    }
+ 
+
+
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #fff;
+       background: #fff;
+    }
+
+    .success {
+      color: #fff;
+    }
+
+    .error {
+      color: #000;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+     <div class="result" id="resultContainer">
+      <p></p>
+
+    </div>
+  </div>
+   <script>
+    // 从 URL 查询参数中获取 id（即 ?id=xxx 里的 xxx）
+    function getQueryParam(name) {
+      const searchParams = new URLSearchParams(window.location.search);
+      return searchParams.get(name);
+    }
+    const postId = getQueryParam('id'); // 拿到 URL 里的 id 参数
+
+    // 自动发起请求（去掉按钮，页面加载后直接执行）
+    (async function () {
+      try {
+        // 1. 参数校验：确保 id 存在且是整数
+        if (!postId) {
+          throw new Error('xiaobaibbs:参数不正确');
+        }
+        const idAsNumber = parseInt(postId, 10);
+        if (isNaN(idAsNumber)) {
+          throw new Error('id 参数必须是整数');
+        }
+
+        // 2. 构造请求参数（替换为真实数据！）
+        const params = {
+          admin: '3688642459',   // 替换成实际管理员账号
+          user: '188456',     // 替换成实际用户账号
+          password: '114588', // 替换成实际密码
+key:'fbe1a5ebb910dc372c11',
+   id: idAsNumber  // 用转换后的整数 ID
+        };
+
+        // 3. 拼接接口地址 + 参数（GET 方式示例）
+        const apiUrl = 'http://shuixian.ltd/main/api/forum/forum_query.php';
+        const queryString = new URLSearchParams(params).toString();
+        const requestUrl = `${apiUrl}?${queryString}`;
+
+        // 4. 发起请求（fetch 方式）
+        const response = await fetch(requestUrl, {
+          method: 'GET',
+          // 如果需要传 token，在这里加请求头（登录后拿到 token 再用）
+          // headers: {
+          //   'Authorization': 'Bearer ' + 你的Token, 
+          // }
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP 错误！状态码：${response.status}`);
+        }
+
+        const data = await response.json();
+        const resultContainer = document.getElementById('resultContainer');
+        resultContainer.innerHTML = `
+
+     `;
+
+        if (data.code === 1) {
+          const postData = data.data;
+          resultContainer.innerHTML += `
+   
+   <html lang="zh-CN">
+<head>
+  <style>
+    /* 关键：让图片变成圆形，同时设置为行内元素或行内块元素 */
+    .circle-img {
+      width: 50px; /* 按需调整大小 */
+      height: 50px;
+      border-radius: 50%; /* 圆形核心，值为宽高的一半 */
+      display: inline-block; /* 让图片和文字在一行，也可用 vertical-align 微调对齐 */
+      vertical-align: middle; /* 垂直居中对齐（可选，让图文对齐更美观） */
+    }
+    lp {
+display: inline-block; /* 让图片和文字在一行，也可用 vertical-align 微调对齐 */
+      vertical-align: middle; /* 垂直居中对齐（可选，让图文对齐更美观） */
+      display: inline-block; /* 让段落和图片同行，也可根据实际场景用 span 等行内元素 */
+      margin: 0 0 0 10px; /* 给文字和图片留间距 */
+    }
+  </style>
+</head>
+<body>
+<div style="display: flex; align-items: flex-start;">
+  
+  <img src=${postData.head} alt="图片" class="circle-img" width="50px" height="50px" style="margin-right: 10px;">
+ <p class="lp">${postData.name}</p></img>
+ </div> 
+              <h2>${postData.title}</h2>
+            <p>${postData.content}</p>
+           <span style="color: #999999;">${postData.time}</span>
+    `;
+        } else if (data.code === 0) {
+          resultContainer.innerHTML += `<p class="error">请求失败：${data.msg}</p>`;
+        } else if (data.code === -1) {
+          resultContainer.innerHTML += `<p class="error">程序错误，需提交官方修复：${data.msg}</p>`;
+        }
+      } catch (error) {
+        // 5. 捕获请求异常，友好提示
+        const resultContainer = document.getElementById('resultContainer');
+        resultContainer.innerHTML = `<p class="error">请求出错：${error.message}</p>`;
+      }
+    })();
+  </script>
+</body>
+</html>
