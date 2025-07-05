@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>高斯模糊</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            recommend: '#00B42A',
+            notRecommend: '#F53F3F',
+            neutral: '#F2F3F5',
+            dark: '#1D2129'
+          },
+          fontFamily: {
+            inter: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .card-hover {
+        @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+      }
+      .blur-header {
+        backdrop-filter: blur(12px);
+      }
+      .scroll-indicator {
+        height: 3px;
+        background: linear-gradient(90deg, #00B42A 0%, #F53F3F 100%);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 50;
+        width: 0%;
+      }
+    }
+  </style>
+</head>
+
+<body class="font-inter bg-neutral text-dark antialiased">
+  <!-- 滚动进度条 -->
+  <div class="scroll-indicator" id="scrollIndicator"></div>
+  
+  <!-- 导航栏 -->
+  <header id="navbar" class="fixed w-full top-0 z-40 blur-header bg-white/90 shadow-sm transition-all duration-300">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16 md:h-20">
+        <div class="flex items-center">
+          <i class="fa fa-filter text-recommend text-2xl mr-2"></i>
+          <span class="text-xl font-bold">高斯模糊建议</span>
+        </div>
+        <nav class="hidden md:flex space-x-6">
+          <a href="#recommend" class="text-dark hover:text-recommend transition-colors font-medium">建议开启</a>
+          <a href="#not-recommend" class="text-dark hover:text-notRecommend transition-colors font-medium">不建议开启</a>
+        </nav>
+        <button class="md:hidden text-dark hover:text-recommend" id="mobile-menu-btn">
+          <i class="fa fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+    <!-- 移动端菜单 -->
+    <div class="md:hidden hidden bg-white border-t" id="mobile-menu">
+      <div class="container mx-auto px-4 py-3 space-y-2">
+        <a href="#recommend" class="block py-2 text-dark hover:text-recommend font-medium">建议开启机型</a>
+        <a href="#not-recommend" class="block py-2 text-dark hover:text-notRecommend font-medium">不建议开启机型</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20 pb-12">
+    <!-- 头部区域 -->
+    <section class="bg-gradient-to-r from-recommend/5 to-notRecommend/5 py-16 md:py-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-[clamp(1.8rem,4vw,2.8rem)] font-bold mb-4">高斯模糊功能手机建议</h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">根据设备性能，以下是建议/不建议开启小白论坛/A盒社区的高斯模糊的机型名单</p>
+        <div class="flex justify-center mt-6 space-x-4">
+          <div class="flex items-center">
+            <div class="w-4 h-4 rounded-full bg-recommend mr-2"></div>
+            <span class="text-sm">建议开启机型</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-4 h-4 rounded-full bg-notRecommend mr-2"></div>
+            <span class="text-sm">不建议开启机型</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 建议开启机型 -->
+    <section id="recommend" class="py-8 px-4">
+      <div class="container mx-auto">
+        <div class="flex items-center mb-6">
+          <div class="w-10 h-10 rounded-full bg-recommend/10 flex items-center justify-center mr-3">
+            <i class="fa fa-check text-recommend"></i>
+          </div>
+          <h2 class="text-2xl font-bold">建议开启高斯模糊的机型(最低)</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="bg-white rounded-xl p-4 shadow-sm card-hover">
+            <div class="flex justify-between items-center">
+              <h3 class="font-bold">华为</h3>
+              <span class="px-2 py-1 bg-recommend/10 text-recommend text-xs rounded-full">麒麟980</span>
+            </div>
+            <div class="text-sm text-gray-500 mt-1">得益于华为的后台机制，在一些方面甚至能秒杀一些骁龙8机型，最低8GB+内存</div>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm card-hover">
+            <div class="flex justify-between items-center">
+              <h3 class="font-bold">小米</h3>
+              <span class="px-2 py-1 bg-recommend/10 text-recommend text-xs rounded-full">骁龙855</span>
+            </div>
+            <div class="text-sm text-gray-500 mt-1">在升级澎湃之后，bug确实多，所以运行内存也得往上涨保证不卡，最低12GB+内存</div>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm card-hover">
+            <div class="flex justify-between items-center">
+              <h3 class="font-bold">其它安卓</h3>
+      <span class="px-2 py-1 bg-recommend/10 text-recommend text-xs rounded-full">骁龙855plus</span>
+            </div>
+            <div class="text-sm text-gray-500 mt-1">其它如果系统优化好的，最低骁龙855plus;如果不好，最低骁龙865/骁龙870。最低8GB/12GB</div>
+          </div>
+      
